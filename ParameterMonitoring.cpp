@@ -7,14 +7,14 @@ ParameterMonitoring::ParameterMonitoring(std::string name, _Float32 value, _Floa
 
 bool ParameterMonitoring::isOk() const
 {
-    return (utils::isInRange(value, min + tolerance + 0.01, max - tolerance));
+    return (Helper::isInRange(value, min + tolerance + 0.01, max - tolerance));   
 }
 
 std::string ParameterMonitoring::getStateStatus()//_Float32 actual, std::map<std::pair<_Float32, _Float32>, std::string> stateList
 {
     for(const auto& temp : stateList)
     {
-        if(utils::isInRange(value, temp.first.first, temp.first.second))
+        if(Helper::isInRange(value, temp.first.first, temp.first.second))
         {
             return temp.second;
         }
