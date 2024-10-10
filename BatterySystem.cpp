@@ -1,3 +1,4 @@
+#include "BatterySystem.h"
 
 BatterySystem::BatterySystem(const _Float32 temperature, const _Float32 chargeState, const _Float32 chargeRate)
  : monitorTemperature(std::make_unique<ParameterMonitoring>("TEMPERATURE", temperature,0.0,45.0,45.0 *0.05)),
